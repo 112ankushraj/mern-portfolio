@@ -1,0 +1,164 @@
+.contact {
+  margin-left: 130px;
+  margin-bottom: 60px;
+  padding-top: 50px;
+}
+
+/* Main card shadow */
+.card0 {
+  box-shadow: 0px 4px 8px 0px #757575;
+  border-radius: 0px;
+  overflow: hidden;
+}
+
+/* Right side card spacing */
+.card2 {
+  margin: 0px 40px;
+}
+
+/* Image styling */
+.card1 .image {
+  padding: 20px;
+  margin-top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Border style for left image column */
+.border-line {
+  border-right: 1px solid #e0e0e0;
+}
+
+/* SOCIAL SECTION */
+.social-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* OR DIVIDER */
+.or-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  gap: 10px;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.or {
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Input and textarea */
+input,
+textarea {
+  padding: 10px 12px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  width: 100%;
+  color: #138781;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: white; /* ensures placeholder is visible */
+}
+
+::placeholder {
+  color: gray;
+  opacity: 1;
+  font-weight: 300;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: none !important;
+  outline: 1px solid #138781 !important;
+}
+
+/* Button */
+.button {
+  background-color: #1e1e2c;
+  color: white;
+  border-radius: 4px;
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #000;
+}
+
+/* ======================== */
+/* Responsive */
+@media (max-width: 768px) {
+  .contact {
+    margin: 20px 15px;
+    padding: 20px 10px;
+  }
+
+  .row {
+    flex-direction: column; /* stack columns */
+  }
+
+  .border-line {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+  }
+
+  .card2 {
+    margin: 0;
+  }
+
+  .card1 .image {
+    height: 250px; /* scale image */
+    width: 100%;
+  }
+
+  .social-header {
+    justify-content: center;
+  }
+
+  input,
+  textarea,
+  .button {
+    width: 100%;
+  }
+}
+
+/* .image-wrapper {
+  overflow: visible !important;
+} */
+
+
+/* Small phones */
+@media (max-width: 480px) {
+  .card1 .image {
+    height: 180px;
+  }
+
+  .contact {
+    margin: 10px 10px;
+    padding: 10px;
+  }
+}
+
+

@@ -1,0 +1,98 @@
+.education {
+  padding: 100px 0;
+  margin: 50px 0 50px 140px; /* desktop margin */
+  background-color: rgba(128, 128, 128, 0.101);
+}
+
+.box {
+  margin-left: 120px; /* desktop only */
+}
+
+.education hr {
+  color: #138781;
+  width: 400px;
+  margin: 10px auto;
+}
+
+.education h2 {
+  font-weight: bold;
+  color: #138781;
+}
+
+.education .vertical-timeline-element-title {
+  color: #138781;
+}
+
+.education .vertical-timeline-element-subtitle {
+  color: #1e1e2c;
+}
+
+#dark .education {
+  background-color: rgba(255, 255, 255, 0.095);
+}
+
+/* ========================== */
+/* Mobile & small screens */
+@media (max-width: 768px) {
+  .education {
+    margin: 0;         /* remove left margin */
+    padding: 50px 15px; /* smaller padding */
+  }
+
+  .box {
+    margin-left: 0;    /* timeline full width */
+  }
+
+  .education hr {
+    width: 80%;        /* smaller line */
+    margin-bottom: 10px;
+  }
+
+  .education h2 {
+    padding-top: 10px;
+    font-size: 20px;    /* smaller heading */
+  }
+
+  /* Timeline content adjustments */
+  .vertical-timeline-element-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: auto !important;
+    padding: 10px !important;
+  }
+
+  .vertical-timeline-element-date {
+    font-size: 12px; /* smaller date */
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 16px; /* smaller title */
+  }
+
+  .vertical-timeline-element-subtitle {
+    font-size: 14px; /* smaller subtitle */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .education {
+    padding: 30px 10px;
+  }
+
+  .education h2 {
+    font-size: 18px;
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 14px;
+  }
+
+  .vertical-timeline-element-subtitle {
+    font-size: 12px;
+  }
+
+  .vertical-timeline-element-date {
+    font-size: 11px;
+  }
+}

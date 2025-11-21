@@ -1,0 +1,58 @@
+
+
+/* .project {
+  margin: 50px 0 50px 140px;
+}
+
+.project hr {
+  color: #138781;
+  width: 400px;
+  margin: 10px auto;
+}
+
+.project h2 {
+  font-weight: bold;
+  color: #138781;
+} */
+
+.work{
+  background-color: #1387812a;
+  margin-left: 0px;
+
+}
+
+.work-exp{
+  padding: 60px 0px;
+}
+
+.work-exp h2{
+  font-weight: bold;
+  color: #1e1e2c;
+}
+
+.work-exp hr {
+  color: #138781;
+  width: 400px;
+  margin: 10px auto;
+}
+
+#dark .work {
+  background-color: #643a6b;
+}
+
+#dark .work-exp h2 {
+  color: white;
+}
+
+/* =================== */
+
+@media (max-width: 600px) {
+  .work {
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+  }
+  .work hr {
+    width: 280px;
+  }
+}

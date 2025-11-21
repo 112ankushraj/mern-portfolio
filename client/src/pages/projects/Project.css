@@ -1,0 +1,159 @@
+/* ===================== PROJECT MAIN CONTAINER ===================== */
+.project {
+  margin: 50px 0 50px 140px;
+}
+
+.project hr {
+  color: #138781;
+  width: 400px;
+  margin: 10px auto;
+}
+
+.project h2 {
+  font-weight: bold;
+  color: #138781;
+  text-align: center;
+}
+
+.project p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#ads {
+  margin: 30px 0 30px 150px;
+}
+
+/* ===================== FIXED CARD HEIGHT ===================== */
+.project .card {
+  height: 470px;             /* 🔥 FIXED HEIGHT */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+/* Hover */
+.project .card:hover {
+  background-color: white;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* ===================== IMAGE FIX ===================== */
+.card.image {
+  height: 230px;           /* constant image area */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.card.image img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  background-color: #f2f2f2;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* ===================== TYPE BADGE ===================== */
+.card-notify-badge {
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  z-index: 20;
+  background: #f29f67;
+  border-radius: 30px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: black;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ===================== TECH BADGES ===================== */
+.card-detail-badge {
+  background-color: #e0b50f;
+  text-align: center;
+  border-radius: 30px;
+  color: black;
+  padding: 5px 10px;
+  font-size: 14px;
+  margin: 5px 2px;
+  display: inline-block;
+}
+
+.card-image-overlay {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ===================== BUTTON ===================== */
+.ad-btn {
+  display: block;
+  text-align: center;
+  width: 150px;
+  height: 40px;
+  background-color: #138781;
+  color: white;
+  border-radius: 80px;
+  margin: 20px auto;
+  text-transform: uppercase;
+  line-height: 35px;
+  font-size: 16px;
+}
+
+.ad-btn:hover {
+  background: transparent;
+  color: #138781;
+  border: 2px solid #138781;
+  transition: 0.5s;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .project { margin-left: 50px; }
+  #ads { margin-left: 0; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project { margin: 50px 15px; }
+  .project hr { width: 280px; }
+
+  .row.g-3 > .col-md-4 {
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin: 5px;
+  }
+
+  .card.image {
+    height: 180px; /* smaller image */
+  }
+
+  .project .card {
+    height: 430px; /* adjust for mobile */
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .row.g-3 > .col-md-4 {
+    flex: 0 0 90%;
+    max-width: 90%;
+    margin: 10px auto;
+  }
+
+  .card.image { height: 160px; }
+  .project .card { height: 420px; }
+}
