@@ -11,6 +11,9 @@ import { MdEmail } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Import image correctly (IMPORTANT)
+import contactImg from "../../assets/images/contact.avif";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -24,17 +27,21 @@ const Contact = () => {
 
   const sendMessage = async () => {
     try {
-      const res = await fetch("https://mern-personal-portfolio-icg4.onrender.com/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.msg,
-        }),
-      });
+      const res = await fetch(
+        "https://mern-personal-portfolio-icg4.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.msg,
+          }),
+        }
+      );
 
       const data = await res.json();
+
       if (res.ok) {
         toast.success("Message Sent Successfully! 🎉");
         setFormData({ name: "", email: "", msg: "" });
@@ -61,7 +68,7 @@ const Contact = () => {
                 <div className="row border-line image-wrapper">
                   <Slide direction="left" triggerOnce>
                     <img
-                      src="/src/assets/images/contact.avif"
+                      src={contactImg}   // FIXED IMAGE PATH
                       alt="contact"
                       className="image"
                     />
@@ -79,13 +86,19 @@ const Contact = () => {
                   <div className="social-header">
                     <h6>Contact With</h6>
                     <div className="social-icons">
-                      <a href="https://www.linkedin.com/in/ankush-raj-56b7902a5/" target="_blank">
+                      <a
+                        href="https://www.linkedin.com/in/ankush-raj-56b7902a5/"
+                        target="_blank"
+                      >
                         <BsLinkedin size={28} color="blue" />
                       </a>
                       <a href="https://github.com/112ankushraj" target="_blank">
                         <BsGithub size={28} color="black" />
                       </a>
-                      <a href="mailto:ankushraj15082005@gmail.com" target="_blank">
+                      <a
+                        href="mailto:ankushraj15082005@gmail.com"
+                        target="_blank"
+                      >
                         <MdEmail size={28} color="#D14836" />
                       </a>
                     </div>

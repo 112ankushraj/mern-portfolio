@@ -6,25 +6,10 @@ dotenv.config();
 
 const app = express();
 
-// ========================
-//        CORS FIX
-// ========================
-const allowedOrigins = [
-  "https://mern-personal-portfolio-frontend.onrender.com", // your live frontend
-  "http://localhost:5173", // local development (change if needed)
-];
-
+// CORS FIX
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (e.g. Postman)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error("CORS not allowed"), false);
-      }
-    },
+    origin: "https://mern-personal-portfolio-frontend.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -32,17 +17,12 @@ app.use(
 
 app.use(express.json());
 
-// ========================
-//        ROUTES
-// ========================
+// Routes
 const contactRoute = require("./routes/contactRoutes");
 app.use("/api/contact", contactRoute);
 
-// ========================
-//       START SERVER
-// ========================
+// Start Server
 const PORT = process.env.PORT || 8080;
-
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
