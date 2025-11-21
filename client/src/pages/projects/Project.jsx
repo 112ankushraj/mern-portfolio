@@ -3,67 +3,89 @@ import "./Project.css";
 
 // react-awesome-reveal का Rotate effect
 import { Rotate } from "react-awesome-reveal";
+import hospitalWeb from "../../assets/images/hospital-web.png";
+import myntraClone from "../../assets/images/myntraclone.png";
+import passwordGenerator from "../../assets/images/contact.avif";
+import burger from "../../assets/images/burger.png";
+import chatgptClone from "../../assets/images/chatgpt-clone.png";
+import codeReview from "../../assets/images/code-review.png";
+import chatApp from "../../assets/images/real time chat app.png";
+
 
 const projects = [
   {
     title: "Hospital-Web-Page",
     type: "Frontend",
-    image: "/src/assets/images/hospital-web.png",
+    image: hospitalWeb,
     techStack: ["HTML", "CSS","JAVASCRIPT"],
     link: "https://112ankushraj.github.io/Responsive-Hospital-Website/",
   },
   {
     title: "Myntra-Clone",
     type: "Frontend",
-    image: "/src/assets/images/myntraclone.png",
+    image: myntraClone,
     techStack: ["HTML", "CSS","JAVASCRIPT"],
     link: "https://112ankushraj.github.io/Myntra-clone/",
   },
-   {
+  {
     title: "Password-Generator",
     type: "Frontend",
-    image: "/src/assets/images/contact.avif",
-    techStack: ["React", "Tailwind CSS",],
+    image: passwordGenerator,
+    techStack: ["React", "Tailwind CSS"],
     link: "https://password-generator-murex-theta.vercel.app/",
   },
   {
     title: "Burger-Website",
     type: "Frontend",
-    image: "/src/assets/images/burger.png",
-    techStack: ["React", "Tailwind CSS",],
+    image: burger,
+    techStack: ["React", "Tailwind CSS"],
     link: "https://appburger.netlify.app/",
   },
   {
     title: "Chatgpt-clone",
     type: "Frontend",
-    image: "/src/assets/images/chatgpt-clone.png",
+    image: chatgptClone,
     techStack: ["React", "Tailwind CSS"],
     link: "https://chatgptankush.netlify.app/",
   },
   {
     title: "Code-Review",
     type: "Frontend + Nodejs",
-    image: "/src/assets/images/code-review.png",
-    techStack: ["React", "Tailwind CSS", "Node",],
+    image: codeReview,
+    techStack: ["React", "Tailwind CSS", "Node"],
     link: "https://github.com/112ankushraj/code-reviewer",
   },
-
   {
     title: "Blood Bank App",
     type: "Full Stack",
-    image: "https://www.shutterstock.com/image-vector/vector-flat-illustration-template-blood-260nw-1612100458.jpg",
-    techStack: ["Node", "Express", "React JS","CSS","Bootstrap", "MongoDB"],
+    image:
+      "https://www.shutterstock.com/image-vector/vector-flat-illustration-template-blood-260nw-1612100458.jpg",
+    techStack: [
+      "Node",
+      "Express",
+      "React JS",
+      "CSS",
+      "Bootstrap",
+      "MongoDB",
+    ],
     link: "https://github.com/112ankushraj/Blood-Bank",
   },
   {
     title: "Real Time Chat Application",
     type: "Full Stack",
-    image: "/src/assets/images/real time chat app.png",
-    techStack: ["React", "Redux","Tailwind CSS", "Express","Node","MongoDB"],
+    image: chatApp,
+    techStack: [
+      "React",
+      "Redux",
+      "Tailwind CSS",
+      "Express",
+      "Node",
+      "MongoDB",
+    ],
     link: "https://realtimmechatapp.onrender.com/login",
   },
-  
 ];
+
 
 const Project = () => {
   return (
