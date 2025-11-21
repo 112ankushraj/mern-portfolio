@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import "./Contact.css";
-
-// react-awesome-reveal
 import { Rotate, Slide } from "react-awesome-reveal";
-
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-
-// Toast
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-// Import image correctly (IMPORTANT)
 import contactImg from "../../assets/images/contact.avif";
 
 const Contact = () => {
@@ -25,20 +18,23 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Automatically switch between dev/prod
+  const backendURL =
+    import.meta.env.MODE === "development"
+      ? "http://localhost:8080"
+      : "https://mern-personal-portfolio-icg4.onrender.com";
+
   const sendMessage = async () => {
     try {
-      const res = await fetch(
-        "https://mern-personal-portfolio-icg4.onrender.com/api/contact",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.msg,
-          }),
-        }
-      );
+      const res = await fetch(`${backendURL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.msg,
+        }),
+      });
 
       const data = await res.json();
 
@@ -55,20 +51,19 @@ const Contact = () => {
 
   return (
     <>
-      {/* Toast Container */}
       <ToastContainer position="top-right" autoClose={3000} />
 
       <div className="contact" id="contact">
         <div className="card card0 border-0">
           <div className="row">
 
-            {/* Left Image Section */}
+            {/* Left Image */}
             <div className="col-md-6 col-lg-6 col-xl-6 col-sm-12">
               <div className="card1">
                 <div className="row border-line image-wrapper">
                   <Slide direction="left" triggerOnce>
                     <img
-                      src={contactImg}   // FIXED IMAGE PATH
+                      src={contactImg}
                       alt="contact"
                       className="image"
                     />
@@ -77,12 +72,12 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Right Form Section */}
+            {/* Right Form */}
             <div className="col-lg-6 col-md-6">
               <Rotate triggerOnce>
                 <div className="card2 d-flex card border-0 px-4 py-5">
 
-                  {/* Social Header */}
+                  {/* Social */}
                   <div className="social-header">
                     <h6>Contact With</h6>
                     <div className="social-icons">
