@@ -6,10 +6,17 @@ dotenv.config();
 
 const app = express();
 
+// Allowed origins (production + local development)
+const allowedOrigins = [
+  "https://mern-personal-portfolio-frontend.onrender.com", // Production
+  "http://localhost:5173", // Local Vite
+  "http://localhost:3000", // CRA (optional)
+];
+
 // CORS FIX
 app.use(
   cors({
-    origin: "https://mern-personal-portfolio-frontend.onrender.com",
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -20,6 +27,11 @@ app.use(express.json());
 // Routes
 const contactRoute = require("./routes/contactRoutes");
 app.use("/api/contact", contactRoute);
+
+// Home route FIXED
+app.get("/", (req, res) => {
+  res.send("Welcome to my server");
+});
 
 // Start Server
 const PORT = process.env.PORT || 8080;
