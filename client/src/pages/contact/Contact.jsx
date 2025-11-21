@@ -22,7 +22,7 @@ const Contact = () => {
   const backendURL =
     import.meta.env.MODE === "development"
       ? "http://localhost:8080"
-      : "https://mern-personal-portfolio-icg4.onrender.com";
+      : "https://portfolio-backend-chi-five.vercel.app";
 
   const sendMessage = async () => {
     try {
